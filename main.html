@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>App</title></head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="icon" type="image/png" href="Anh/icon.png" sizes="192x192">
+<body>
+	<div class="til">
+		<p id="home" onclick="result()">Kết thúc</p>
+		<p id="set" onclick="onOffSetting()">Cài đặt</p>
+	</div>
+
+
+	<div class='box' id="setting">
+		<p class="X" onclick="onOffSetting()"><b>X</b></p>
+		<div class="board">
+			<div id="vol">
+				<h2>Điều chỉnh âm thanh</h2>
+				<div id="setmusic">
+					<p id="music">Âm nhạc</p>
+					<div class="musicslide">
+  						<input type="range" min="1" max="100" value="100" class="slider" id="myRange" oninput="sliderChangeMusic(this.value)">
+					</div>
+				</div>
+				<p id="sound">Tiếng động</p>
+				<div class="soundslide">
+  					<input type="range" min="1" max="100" value="20" class="slider" id="myRange" oninput="sliderChangeSound(this.value)">
+			</div>
+			</div>
+			<div id="mode">
+				<h2>Chọn chế độ</h2>
+				<div  id="adventure">
+					<p>Chế độ Ngẫu nhiên</p>
+					<div class="dot " id="dota" onclick="adv()"></div>
+				</div>
+
+				<div id="custom">
+					<p>Chế độ Tùy chọn</p>
+					<div class ="dot " id="dotc" onclick="cus()"></div>
+				</div>
+			</div>
+			<h2>Các chức năng</h2>
+			<div id="feature">
+			<div>
+				<p>Đồng hồ</p>
+				<div class="dot " id="dotcl" onclick="changeColor('dotcl',0)"></div>
+			</div>
+			
+			<div>
+				<p>Cảnh báo mất tập trung</p>
+				<div class="dot " id="dotal" onclick="changeColor('dotal',1)"></div>
+			</div>
+			
+			<div>
+				<p>Các câu nói nổi tiếng về học tập</p>
+				<div class="dot " id="dotqu" onclick="changeColor('dotqu',2)"></div>
+			</div>
+		</div>
+		<div id="theme">
+			<h2>Chọn hình nền mà bạn thích ở đây</h2>
+			<div onclick="backgroundMoon()">
+				<img src="Anh/moonlight.png">
+				<p>Mặt trăng</p>
+			</div>
+
+			<div onclick="backgroundEarth()">
+				<img src="Anh/Earth.png">
+				<p>Trái đất</p>
+			</div>
+
+			<div onclick="backgroundStar()">
+				<img src="Anh/Star.png">
+				<p>Ngôi sao</p>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	
+	<audio controls autoplay id="musicp">
+	  		<source src="silence.mp3" type="audio/mpeg"  id="musicsource">
+	</audio>
+
+	<audio controls loop autoplay id='soundp'>
+  		<source src="silence.mp3"  type="audio/mpeg" id="soundsource">
+	</audio>
+	
+	<div id="header">
+		<p id="time"></p>
+		<p id="quote"></p>
+	</div>
+
+		<div class="box" id="selector">
+			<p class="X" onclick="offSelector()"><b>X</b></p>
+			<div class="board" id="selectorboard">
+				<h1>Êm dịu</h1>
+				<div id="beach" class="peaceful" onclick="beach()">
+					<h2>Bãi biển</h2>
+					<p>Tiếng sóng vỗ vào bờ cùng tiếng nhạc êm dịu</p>
+				</div>
+
+				<div id="forest" class="peaceful" onclick="forest()">
+					<h2>Rừng rậm</h2>
+					<p>Tiếng kêu của các loài côn trùng cùng tiếng nhạc</p>
+				</div>
+
+				<div id="highway" class="peaceful" onclick="highway()">
+					<h2>Cao tốc</h2>
+					<p>Tiếng xe trên đường cao tốc cùng tiếng nhạc êm dịu</p>
+				</div>
+
+				<div id="rain" class="peaceful" onclick="rain()">
+					<h2>Mưa rơi</h2>
+					<p>Tiếng mưa rơi trên mái cùng tiếng nhạc êm dịu</p>
+				</div>
+
+				<div id="fire" onclick="fire()">
+					<h2>Lửa trại</h2>
+					<p>Âm thanh lửa cháy cùng tiếng nhạc êm dịu</p>
+				</div>
+
+				<div id="afternoon" class="peaceful" onclick="afternoon()">
+					<h2>Buổi chiều</h2>
+					<p>Buổi chiểu ở một nông trại với tiếng của các vật</p>
+				</div>				
+
+				<h1>Vui tươi</h1>
+				<div id="Hawaii" onclick="hawaii()">
+					<h2>Đảo Hawaii</h2>
+					<p>Tiếng sóng vỗ vào bờ và tiếng nhạc ở quần đảo Hawaii</p>
+				</div>
+
+				<div id="coffe" onclick="coffee()">
+					<h2>Quán Cafe</h2>
+					<p>Âm thanh trong một quá Café và nhạc nhẹ nhàng</p>
+				</div>
+
+				<div id="street" onclick="street()">
+					<h2>Góc phố</h2>
+					<p>Âm thanh ở một góc phố với tiếng phương tiện gian thông</p>
+				</div>
+				
+				<div id="Carn" onclick="carnival()">
+					<h2>Carnival</h2>
+					<p>Âm thanh ở một lễ hội với tiếng người nói chuyện</p>
+				</div>	
+				
+				<div id="traffic" onclick="traffic()">
+					<h2>Giao thông</h2>
+					<p>Âm thanh được ghi lại ở một con đường đồng người qua lại</p>
+				</div>			
+
+				<div id="trainst" onclick="trainst()">
+					<h2>Ga tàu hỏa</h2>
+					<p>Âm thanh được ghi lại ở một ga tàu hỏa có một ban nhạc</p>
+				</div>		
+			</div>
+		</div>
+		<div id="pointer" onclick="onSelector()"></div>
+	<div id="alert">
+		<div id="text">
+			<h2>Hey !!!</h2>
+			<p>Có vẻ bạn đã hơi mất tập trung một chút. Mình có nhiệm vụ nhắc nhở bạn để đảm bảo chất lượng học tập tốt nhất.</p>
+		</div>
+		<button type="button" onclick="off()">Thoát</button>
+	</div>
+	</div>
+
+	<div class="box" id="result">
+		<p class="X" id="resultx" onclick="offResult()"><b>X</b></p>
+		<h2>Cảm ơn bạn đã sử dụng ứng dụng của chúng mình</h2>
+		<div class="board" id="resultboard">
+			<p>Tổng thời gian bạn đã sử dụng: <span id="totaltime"></span></p>
+			<p>Tổng thời gian phân tâm: <span id="totalwaste"></span></span></p>
+			<p>Đánh giá về sự hiệu quả của bạn trong quãng thời gian qua: <strong><span id="score">10</span>/10</strong></p>
+		</div>
+
+		<div id="star">
+			<span class="full" id="one"></span>
+			<span class="full" id="two"></span>
+			<span class="full" id="three"></span>
+			<span class="full" id="four"></span>
+			<span class="full" id="five"></span>
+			<span class="full" id="six"></span>
+			<span class="full" id="seven"></span>
+			<span class="full" id="eight"></span>
+			<span class="full" id="nine"></span>
+			<span class="full" id="ten"></span>
+		</div>
+		<button onclick="location.href='index.html'">Rời khỏi</button>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+<!--Lê Quý Dương - THPT Hàn Thuyên-->
