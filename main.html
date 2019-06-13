@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>App</title></head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="icon" type="image/png" href="Anh/icon.png" sizes="192x192">
+<body>
+	<div class="til">
+		<p id="home" onclick="result()">End session</p>
+		<p id="set" onclick="onOffSetting()">Setting</p>
+	</div>
+
+
+	<div class='box' id="setting">
+		<p class="X" onclick="onOffSetting()"><b>X</b></p>
+		<div class="board">
+			<div id="vol">
+				<h2>Sound and Music Controller</h2>
+				<div id="setmusic">
+					<p id="music">Musics</p>
+					<div class="musicslide">
+  						<input type="range" min="1" max="100" value="100" class="slider" id="myRange" oninput="sliderChangeMusic(this.value)">
+					</div>
+				</div>
+				<p id="sound">Sound effects</p>
+				<div class="soundslide">
+  					<input type="range" min="1" max="100" value="20" class="slider" id="myRange" oninput="sliderChangeSound(this.value)">
+			</div>
+			</div>
+			<div id="mode">
+				<h2>Choose a mode</h2>
+				<div  id="adventure">
+					<p>Radomize mode</p>
+					<div class="dot " id="dota" onclick="adv()"></div>
+				</div>
+
+				<div id="custom">
+					<p>Custom mode</p>
+					<div class ="dot " id="dotc" onclick="cus()"></div>
+				</div>
+			</div>
+			<h2>Features</h2>
+			<div id="feature">
+			<div>
+				<p>Timer</p>
+				<div class="dot " id="dotcl" onclick="changeColor('dotcl',0)"></div>
+			</div>
+			
+			<div>
+				<p>Focus warning</p>
+				<div class="dot " id="dotal" onclick="changeColor('dotal',1)"></div>
+			</div>
+			
+			<div>
+				<p>Quotes about studying and working</p>
+				<div class="dot " id="dotqu" onclick="changeColor('dotqu',2)"></div>
+			</div>
+		</div>
+		<div id="theme">
+			<h2>Choose the background image that you like here</h2>
+			<div onclick="backgroundMoon()">
+				<img src="Anh/moonlight.png">
+				<p>Moon</p>
+			</div>
+
+			<div onclick="backgroundEarth()">
+				<img src="Anh/Earth.png">
+				<p>Earth</p>
+			</div>
+
+			<div onclick="backgroundStar()">
+				<img src="Anh/Star.png">
+				<p>Star</p>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	
+	<audio controls autoplay id="musicp">
+	  		<source src="silence.mp3" type="audio/mpeg"  id="musicsource">
+	</audio>
+
+	<audio controls loop autoplay id='soundp'>
+  		<source src="silence.mp3"  type="audio/mpeg" id="soundsource">
+	</audio>
+	
+	<div id="header">
+		<p id="time"></p>
+		<p id="quote"></p>
+	</div>
+
+		<div class="box" id="selector">
+			<p class="X" onclick="offSelector()"><b>X</b></p>
+			<div class="board" id="selectorboard">
+				<h1>Peaceful</h1>
+				<div id="beach" class="peaceful" onclick="beach()">
+					<h2>Beach</h2>
+					<p>Soft sound that was recorded near a beach (sound of ocean waves)</p>
+				</div>
+
+				<div id="forest" class="peaceful" onclick="forest()">
+					<h2>Forest</h2>
+					<p>Sound of insects, animal that was recorded in a rain jungle</p>
+				</div>
+
+				<div id="highway" class="peaceful" onclick="highway()">
+					<h2>Highway</h2>
+					<p>Sound of traffics that was recorded in a highway</p>
+				</div>
+
+				<div id="rain" class="peaceful" onclick="rain()">
+					<h2>Rain falling</h2>
+					<p>The raining sound on a rooftop and the sound of thunder</p>
+				</div>
+
+				<div id="fire" onclick="fire()">
+					<h2>Fire</h2>
+					<p>The sound of a burning fire in a camp at night</p>
+				</div>
+
+				<div id="afternoon" class="peaceful" onclick="afternoon()">
+					<h2>Afternoon</h2>
+					<p>The sound was recorded in an afternoon in a farm</p>
+				</div>				
+
+				<h1>Joyful</h1>
+				<div id="Hawaii" onclick="hawaii()">
+					<h2>Hawaii</h2>
+					<p>The sound of oceanwaves in Hawaii with joyful music</p>
+				</div>
+
+				<div id="coffe" onclick="coffee()">
+					<h2>Café</h2>
+					<p>Sound that was recorded in a cafe with joyful music</p>
+				</div>
+
+				<div id="street" onclick="street()">
+					<h2>Street corner</h2>
+					<p>The sound that was recorded in a street corner</p>
+				</div>
+				
+				<div id="Carn" onclick="carnival()">
+					<h2>Carnival</h2>
+					<p>A music festival is about to be celebrated</p>
+				</div>	
+				
+				<div id="traffic" onclick="traffic()">
+					<h2>Traffics</h2>
+					<p>The sound was record in a crowded street at night</p>
+				</div>			
+
+				<div id="trainst" onclick="trainst()">
+					<h2>Train station</h2>
+					<p>The sound was recorded in a gas station with a music band performing</p>
+				</div>		
+			</div>
+		</div>
+		<div id="pointer" onclick="onSelector()"></div>
+	<div id="alert">
+		<div id="text">
+			<h2>Hey !!!</h2>
+			<p>I think you are a little bit misfocused. I have the mission to alert you and make sure that you have the highes productivity and concentration.</p>
+		</div>
+		<button type="button" onclick="off()">Thoát</button>
+	</div>
+	</div>
+
+	<div class="box" id="result">
+		<p class="X" id="resultx" onclick="offResult()"><b>X</b></p>
+		<h2>Thank you for using our apps</h2>
+		<div class="board" id="resultboard">
+			<p>The total time you have spend here: <span id="totaltime"></span></p>
+			<p>The time you lost your focus: <span id="totalwaste"></span></span></p>
+			<p>How productive you are: <strong><span id="score">10</span>/10</strong></p>
+		</div>
+
+		<div id="star">
+			<span class="full" id="one"></span>
+			<span class="full" id="two"></span>
+			<span class="full" id="three"></span>
+			<span class="full" id="four"></span>
+			<span class="full" id="five"></span>
+			<span class="full" id="six"></span>
+			<span class="full" id="seven"></span>
+			<span class="full" id="eight"></span>
+			<span class="full" id="nine"></span>
+			<span class="full" id="ten"></span>
+		</div>
+		<button onclick="location.href='index.html'">Leave here</button>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
+<!--Lê Quý Dương - THPT Hàn Thuyên-->

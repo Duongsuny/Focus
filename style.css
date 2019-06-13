@@ -1,0 +1,263 @@
+@font-face{
+	font-family: Muli;
+    scr: url("Fonts/Muli-Light.tff");
+}
+
+@font-face{
+      font-family: Roboto;
+      scr: url("Fonts/Roboto-Light.tff");
+ }
+
+body{
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	background-image: url(Anh/Home.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+}
+
+#time{
+	font-family: Roboto;
+	font-size: 100px;
+	font-weight: 100;
+	color: white;
+	position: relative;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#quote{
+	margin-top: 30px;
+	font-family: Roboto;
+	font-size: 29px;
+	color: white;
+	position: relative;
+	text-align: center;
+}
+
+.buttons{
+	padding-top: 50px;
+	margin: 0 auto;
+    text-align: center;
+}
+
+.hadeffect{
+	-webkit-animation: fadeIn 2s linear forwards;
+    animation: fadeIn 2s linear forwards;
+}
+
+@-webkit-keyframes fadeIn {
+            0% {opacity: 0;margin-top: 10%}
+            100% {opacity: 1;margin-top: 0}
+}
+         
+
+@keyframes fadeIn {
+            0% {opacity: 0;margin-top: 10%}
+            100% {opacity: 1;margin-top: 0}
+} 
+
+#focus{
+	background-color: #3498db;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+
+    height: 80px;
+    width: 320px;
+    border-radius: 30px;
+
+    color: white;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    margin: 10px;
+}
+
+#credit{
+	background-color: transparent;
+    background-repeat:no-repeat;
+    border-color: white;
+    cursor:pointer;
+    outline:none;
+
+    height: 80px;
+    width: 320px;
+    border-radius: 30px;
+
+    color: white;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    margin: 10px;
+}
+
+#box{
+  position: fixed; 
+  display: none; 
+  width:800px;
+  height:80%;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius:20px;
+  background-color: white; 
+  z-index: 2;
+  cursor: initial;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden ;
+  margin-top: 100px;
+}
+
+#board{
+	height: 70%;
+	overflow: auto;
+	margin-left: 70px; 
+	text-align: left;
+}
+
+
+#box h2{
+	font-family: Muli, sans-serif;
+	color: #3498db;
+	margin-bottom: 30px;
+	font-weight: 200;
+	text-align: center;
+	font-size: 24px;
+}
+
+#box p{
+	font-family: "Roboto", sans-serif;
+	color: #2c3e50;
+	margin-left: 0px;
+	font-size: 19px;
+	font-weight: 300;
+}
+
+#box button{
+	background-color: #3498db;
+	color: white;
+	text-align: center;
+	height: 50px;
+	width: 100px;
+	border-radius: 30px;
+	border: none;
+	font-family: Muli, sans-serif;
+	font-size: 19px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	line-height: 40px;
+}
+
+#clock{
+  position: fixed; 
+  display: none; 
+  width:80%;
+  height: 70%;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: white; 
+  z-index: 2;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 5%;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+#clock h1{
+	font-family: "Muli", sans-serif;
+	color: #3498db;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#inside{
+	display: flex;
+	flex-direction: row;
+	height: 70%;
+	overflow: auto;;
+}
+
+#big{
+	margin-top: 2%;
+	font-family: roboto, sans-serif;
+	font-size: 80px;
+	text-align: center;
+	color: #3498db;
+  	flex: 45%;
+  	position: relative;
+}
+
+#text{
+	flex: 55%;
+	padding-right: 50px;
+	padding-top: 20px;
+	padding-bottom: 2%;
+	font-size: 20px;
+	color: #2c3e50;
+}
+
+.para{
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+	line-height: 200%;
+	text-align: justify;
+}
+
+
+#ques{
+	font-family: "Muli", sans-serif;
+	font-size: 26px;
+	margin-bottom: 0;
+}
+
+#choose{
+	font-size: 20px;
+	font-family: Roboto, sans-serif;
+	text-align: right;
+	margin: 20px;
+}
+#YN{
+	text-align: right;
+	margin: 30px;
+}
+
+#yes{
+	background-color: #3498db;
+	height: 50px;
+	width: 200px;
+	color: white;
+	font-size: 20px;
+	font-family: Roboto, sans-serif;
+	border-radius: 20px;
+	margin: 10px;
+	border-width: 0;
+}
+
+#no{
+	background-color: #bdc3c7;
+	border-color: white;
+	height: 50px;
+	width: 200px;
+	border: none;
+	color: black;
+	font-size: 20px;
+	font-family: Roboto, sans-serif;
+	border-radius: 20px;
+	margin: 10px;
+}
